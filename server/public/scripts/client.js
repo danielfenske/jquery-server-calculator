@@ -40,6 +40,9 @@ let bundleCalculation = () => {
         let firstNumber = Number($('#firstNumber').val());
         let secondNumber = Number($('#secondNumber').val());
 
+if (operation === undefined) {
+    alert('Please select operation to receive calculation')
+} else {
     // making post request to server on /calculation url
     $.ajax({
         method: 'POST', // type of request
@@ -63,6 +66,8 @@ let bundleCalculation = () => {
         
     })
     
+}
+
 } // end bundleCalculation
 
 let renderCalculationHistory = (response) => {
