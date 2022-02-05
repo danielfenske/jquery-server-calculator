@@ -13,6 +13,23 @@
         <script src="scripts/client.js"></script>
     </head>
     <body>
-        <header><h1>Server Calculator</h1></header>
+        <header>
+            <h1>Server Calculator</h1>
+        </header>
+
+        <section id="calculator">
+            <input type="number" placeholder="enter number" id="firstNumber"></input>
+            <button id="additionButton">+</button>
+            <input type="number" placeholder="enter number" id="secondNumber"></input>
+            <button id="equalButton">=</button>
+            <button id="clearButton">C</button>
+        </section>
+
+        <section id="historyContainer">
+            <h1 class= "subHeader">Calculator History</h1>
+            <ul id="calculatorHistory">
+                <li></li>
+            </ul>
+        </section>
     </body>
 </html>
