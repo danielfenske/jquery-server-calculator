@@ -2,20 +2,42 @@ console.log('JS');
 
 $(document).ready(onReady);
 
+let operation;
 
 function onReady() {
     console.log('JQ');
     
     // initiate calculation on '=' click
     $('#equalButton').on('click', bundleCalculation);
+
+    $('#additionButton').on('click', operationAdd)
+    $('#subtractionButton').on('click', operationSubtract)
+    $('#multiplicationButton').on('click', operationMultiply)
+    $('#divisionButton').on('click', operationDivide)
+
 } // end onReady
+
+let operationAdd = () => {
+    operation = '+';
+} // end operationAdd
+
+let operationSubtract = () => {
+    operation = '–';
+} // end operationSubtract
+
+let operationMultiply = () => {
+    operation = '×';
+} // end operationSubtract
+
+let operationDivide = () => {
+    operation = '÷';
+} // end operationSubtract
 
 let bundleCalculation = () => {
     console.log('in bundleCalculation');
 
         // define values taken from input fields
         let firstNumber = Number($('#firstNumber').val());
-        let operation = 'add';
         let secondNumber = Number($('#secondNumber').val());
 
     // making post request to server on /calculation url
@@ -33,6 +55,8 @@ let bundleCalculation = () => {
         },
     }).then(function(response){
         console.log('Success!', response);
+
+        renderCalculationHistory(response);
         
     }).catch(function(response){
         console.log('Failure!');
@@ -41,3 +65,14 @@ let bundleCalculation = () => {
     
 } // end bundleCalculation
 
+let renderCalculationHistory = (response) => {
+    console.log('in renderCalculationHistory');
+    
+    $('#calculatorHistory').empty();
+
+    for (let calculation of response) {
+        $('#calculatorHistory').append(`
+            <li>${calculation.firstNumber} ${calculation.operation} ${calculation.secondNumber} = ${calculation.solution}</li>
+        `)
+    }
+} // end renderCalculationHistory

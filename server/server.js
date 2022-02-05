@@ -17,7 +17,7 @@ app.use(express.static('server/public'));
 // -------------------------------------------------------------------//
 
 // initialize calculationHistory an
-let calculationHistory = [{firstNumber: 23, operation: 'add', secondNumber: 1, solution: 4}];
+let calculationHistory = [];
 
 
 // server receiving request from client on /calculation url
@@ -44,7 +44,7 @@ app.post("/calculation", (req, res) => {
     calculationHistory.push(bundledCalculation);    
 
     // sends bundledCalculation (with solution) back to server
-    res.send(bundledCalculation);
+    res.send(calculationHistory);
 
 }); // end post /calculation
 
@@ -55,18 +55,21 @@ let solveCalculation = (bundledCalculation) =>{
     
     // determine which operation was requested to execute proper function
     switch (bundledCalculation.operation) { 
-        case 'add':
+        case '+':
             console.log('addition!');
             bundledCalculation.solution = bundledCalculation.firstNumber + bundledCalculation.secondNumber;
             break;
-        case 'subtract':
+        case '–':
             console.log('subtraction!');
+            bundledCalculation.solution = bundledCalculation.firstNumber - bundledCalculation.secondNumber;
             break;
-        case 'multiplication':
+        case '×':
             console.log('multiplication!');
+            bundledCalculation.solution = bundledCalculation.firstNumber * bundledCalculation.secondNumber;
             break;
-        case 'division':
+        case '÷':
             console.log('division!');
+            bundledCalculation.solution = bundledCalculation.firstNumber / bundledCalculation.secondNumber;
             break;
         default: 
             console.log('Something is wrong');  
