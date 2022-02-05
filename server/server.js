@@ -50,9 +50,28 @@ app.post("/calculation", (req, res) => {
 
 
 // calculate problem given from client
-let solveCalculation = () =>{
+let solveCalculation = (bundledCalculation) =>{
     console.log('in solveCalculation');
-        
+    
+    // determine which operation was requested to execute proper function
+    switch (bundledCalculation.operation) { 
+        case 'add':
+            console.log('addition!');
+            bundledCalculation.solution = bundledCalculation.firstNumber + bundledCalculation.secondNumber;
+            break;
+        case 'subtract':
+            console.log('subtraction!');
+            break;
+        case 'multiplication':
+            console.log('multiplication!');
+            break;
+        case 'division':
+            console.log('division!');
+            break;
+        default: 
+            console.log('Something is wrong');  
+    } // end switch case
+
 } // end solveCalculation
 
 
