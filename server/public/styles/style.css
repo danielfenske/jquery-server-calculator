@@ -5,10 +5,10 @@
 body {
     display: flex;
     justify-content: center;
-    align-items: center;
+    align-items: flex-start;
     flex-direction: row;
     gap: 50px;
-    padding-top: 200px;
+    padding: 100px;
 }
 
 #calculator {
@@ -132,3 +132,42 @@ button:hover {
     font-weight: bold;
 }
 
+#historyContainer {
+    /* POSITIONING */
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    flex-direction: column;
+    /* BLOCK STYLING */
+    border: 1px solid black;
+    width: 300px;
+}
+
+.subHeader {
+    padding: 5px;
+    margin: 5px;
+}
+
+#calculatorHistory {
+    /* POSITIONING */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column-reverse;
+    /* BLOCK STYLING */
+    padding: 5px;
+    margin: 5px;
+    width: 270px;
+    /* FONT STYLING */
+    list-style-type: none;
+    line-height: 1.5em;
+}
+
+ul :last-child {
+    font-weight: bold;
+}
+
+#calculationLi {
+    /* FONT STYLING */
+    text-align: center;
+}
