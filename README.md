@@ -1,4 +1,4 @@
-# Salary Calculator
+# Server Calculator
 
 ## Description
 
