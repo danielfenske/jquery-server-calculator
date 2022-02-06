@@ -2,8 +2,8 @@ console.log('JS');
 
 $(document).ready(onReady);
 
-// initialize operation variable
-let operation;
+// // initialize operation variable
+// let operation;
 
 function onReady() {
     console.log('JQ');
@@ -15,19 +15,20 @@ function onReady() {
     $('#equalButton').on('click', bundleCalculation);
 
     // click listener for 'c' button
-    $('#clearButton').on('click', clearInputFields)
+    $('#clearButton').on('click', clearInputFields);
 
     // click listeners for operation buttons
-    $('#additionButton').on('click', operationAdd)
-    $('#subtractionButton').on('click', operationSubtract)
-    $('#multiplicationButton').on('click', operationMultiply)
-    $('#divisionButton').on('click', operationDivide)
+    $('#additionButton').on('click', operationAdd);
+    $('#subtractionButton').on('click', operationSubtract);
+    $('#multiplicationButton').on('click', operationMultiply);
+    $('#divisionButton').on('click', operationDivide);
 
 } // end onReady
 
 // operation will change value depending on operation button click
 let operationAdd = () => {
     operation = '+';
+
 } // end operationAdd
 
 let operationSubtract = () => {
