@@ -65,31 +65,33 @@ let bundleCalculation = () => {
         let firstNumber = Number($('#firstNumber').val());
         let secondNumber = Number($('#secondNumber').val());
 
-if (operation === undefined) {
-    alert('Please select operation to receive calculation')
-} else {
-    // making post request to server on /calculation url
-    $.ajax({
-        method: 'POST', // type of request
-        url: '/calculation',
-        data: {
+if ($('.inputField').val() === '') {
+    alert('Please enter two numbers to receive calculation');
+} else if (operation === undefined) {
+    alert('Please select operation to receive calculation');
+    } else {
+        // making post request to server on /calculation url
+        $.ajax({
+            method: 'POST', // type of request
+            url: '/calculation',
+            data: {
 
-            // object sent to server
-            bundledObject: {
-                firstNumber: firstNumber,
-                operation: operation,
-                secondNumber: secondNumber,
+                // object sent to server
+                bundledObject: {
+                    firstNumber: firstNumber,
+                    operation: operation,
+                    secondNumber: secondNumber,
+                },
             },
-        },
-    }).then(function(response){
-        // console.log('Success!', response);
+        }).then(function(response){
+            // console.log('Success!', response);
 
-        getCalculationHistory();
-        
-    }).catch(function(response){
-        // console.log('Failure!');
-        
-    })
+            getCalculationHistory();
+            
+        }).catch(function(response){
+            // console.log('Failure!');
+            
+        })
     
 }
 
