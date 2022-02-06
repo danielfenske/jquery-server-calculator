@@ -13,20 +13,21 @@
         <script src="scripts/client.js"></script>
     </head>
     <body>
-        <header>
-            <h1>Server Calculator</h1>
-        </header>
-
         <section id="calculator">
-            <input type="number" class="inputField" id="firstNumber" placeholder="enter number"></input>
+            <header>
+                <h1>Server Calculator</h1>
+            </header>
+
+            <input type="number" class="inputField" id="firstNumber" placeholder="enter first number"></input>
+            <input type="number" class="inputField" id="secondNumber" placeholder="enter second number"></input>
+
             <button class="operationButton" id="additionButton">+</button>
             <button class="operationButton" id="subtractionButton">–</button>
             <button class="operationButton" id="multiplicationButton">×</button>
             <button class="operationButton" id="divisionButton">÷</button>
-
-            <input type="number" class="inputField" id="secondNumber" placeholder="enter number"></input>
-            <button id="equalButton">=</button>
-            <button id="clearButton">C</button>
+    
+            <button id="clearButton">C</button>      
+            <button id="equalButton">=</button>      
         </section>
 
         <section id="historyContainer">
