@@ -32,14 +32,15 @@ body {
     width: 270px;
     /* FONT STYLING */
     list-style-type: none;
-    line-height: 1.5em;
     color: blue;
     font-size: 30px;
+    font-weight: bold;
 }
 
 #solutionLi {
     /* FONT STYLING */
     text-align: center;
+    font-size: 40px;
 }
 
 #calculator {
@@ -105,8 +106,13 @@ button:hover {
     width: 60px;
     /* FONT STYLING */
     text-align: center;
-    font-size: 20px;
+    font-size: 30px;
     font-weight: bold;
+}
+
+.operationButton:focus {
+    background-color: rgb(63, 63, 63);
+    color: white;
 }
 
 #additionButton {
@@ -203,13 +209,19 @@ button:hover {
     /* FONT STYLING */
     list-style-type: none;
     line-height: 1.5em;
+    font-weight: normal;
 }
 
-ul :last-child {
+li.calculationLi:last-child {
+    font-size: 18px;
     font-weight: bold;
 }
 
 #calculationLi {
     /* FONT STYLING */
     text-align: center;
+}
+
+.blue {
+    color: blue;
 }

@@ -42,26 +42,6 @@ let operationDivide = () => {
     operation = '÷';
 } // end operationSubtract
 
-// Purpose of function: get latest calculation history array from server
-let getCalculationHistory = () => {
-    console.log('in getCalculationHistory');
-    
-    $.ajax({
-        method: 'GET', // request to server for calculator history
-        url: '/calculationHistory', 
-        data: ''
-    }).then(function(response){
-        console.log('Success!', response);
-        
-        // append calculationHistory to DOM
-        renderCalculationHistory(response);
-        
-    }).catch(function(response){
-        console.log('Failure');
-        
-    })
-} // end getCalculations
-
 // Purpose of function: pull input values and 
 // send as bundled object to server for calculation
 let bundleCalculation = () => {
@@ -109,6 +89,41 @@ if ($('.inputField').val() === '') {
     }
 } // end bundleCalculation
 
+// Purpose of function: get latest calculation history array from server
+let getCalculationHistory = () => {
+    console.log('in getCalculationHistory');
+    
+    $.ajax({
+        method: 'GET', // request to server for calculator history
+        url: '/calculationHistory', 
+        data: ''
+    }).then(function(response){
+        console.log('Success!', response);
+        
+        // append calculationHistory to DOM
+        renderCalculationHistory(response);
+        
+    }).catch(function(response){
+        console.log('Failure');
+        
+    })
+} // end getCalculations
+
+// Purpose of function: append latest calculation history to DOM
+let renderCalculationHistory = (response) => {
+    console.log('in renderCalculationHistory');
+    
+    // empties previous calculation history array
+    $('#calculatorHistory').empty();
+
+    // loops through calculation history array and appends each object to display calc + solution
+    for (let calculation of response) {
+        $('#calculatorHistory').append(`
+            <li class="calculationLi">${calculation.firstNumber} ${calculation.operation} ${calculation.secondNumber} = <span class="blue">${calculation.solution}</span><hr></li>
+        `)
+    }
+} // end renderCalculationHistory
+
 let getLastSolution = () => {
     console.log('in getLastSolution');
     
@@ -138,22 +153,6 @@ let renderSolution = (response) => {
     // render last solution to DOM
    $('#calculatorSolution').append(`<li class="solutionLi">${responseConvertedToNumber}</li>`)
 } // end renderSolution
-
-
-// Purpose of function: append latest calculation history to DOM
-let renderCalculationHistory = (response) => {
-    console.log('in renderCalculationHistory');
-    
-    // empties previous calculation history array
-    $('#calculatorHistory').empty();
-
-    // loops through calculation history array and appends each object to display calc + solution
-    for (let calculation of response) {
-        $('#calculatorHistory').append(`
-            <li class="calculationLi">${calculation.firstNumber} ${calculation.operation} ${calculation.secondNumber} = ${calculation.solution}<hr></li>
-        `)
-    }
-} // end renderCalculationHistory
 
 // Purpose of function: clear input fields when 'C' button is pressed
 let clearInputFields = () => {
