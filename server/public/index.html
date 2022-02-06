@@ -13,20 +13,24 @@
         <script src="scripts/client.js"></script>
     </head>
     <body>
+
+        <header>
+            <h1>Server Calculator</h1>
+        </header>
+
         <section id="calculator">
-            <header>
-                <h1>Server Calculator</h1>
-            </header>
 
             <input type="number" class="inputField" id="firstNumber" placeholder="enter first number"></input>
-            <input type="number" class="inputField" id="secondNumber" placeholder="enter second number"></input>
+
+            <button id="clearButton">C</button>      
+            <button id="equalButton">=</button>
 
             <button class="operationButton" id="additionButton">+</button>
             <button class="operationButton" id="subtractionButton">–</button>
             <button class="operationButton" id="multiplicationButton">×</button>
             <button class="operationButton" id="divisionButton">÷</button>
 
-            <button class="numberButton" id="sevenButton" value="7">7</button>            <button class="numberButton" id="numSeven" value="7">7</button>
+            <button class="numberButton" id="sevenButton" value="7">7</button>        
             <button class="numberButton" id="eightButton" value="8">8</button>
             <button class="numberButton" id="nineButton" value="9">9</button>
             <button class="numberButton" id="fourButton" value="4">4</button>
@@ -37,10 +41,7 @@
             <button class="numberButton" id="threeButton" value="3">3</button>
             <button class="numberButton" id="zeroButton" value="0">0</button>
             <button class="numberButton" id="decimalButton" value=".">.</button>
-
-    
-            <button id="clearButton">C</button>      
-            <button id="equalButton">=</button>      
+      
         </section>
 
         <section id="historyContainer">

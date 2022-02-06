@@ -11,24 +11,7 @@ body {
     padding: 100px;
 }
 
-#calculator {
-    /* POSITIONING */
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr 1fr;
-    grid-template-rows: 45px 35px 35px 1fr 1fr;
-    gap: 10px;
-
-    /* BLOCK STYLING */
-    background-color: black;
-    border-radius: 10px;
-    padding: 10px;
-    width: 270px;
-}
-
 header {
-    grid-column: 1 / 5;
-    grid-row: 1 / 2;
-
     /* INNER ELEMENT POSITIONING */
     display: flex;
     justify-content: center;
@@ -43,6 +26,20 @@ header {
    font-weight: bold;
 }
 
+#calculator {
+    /* POSITIONING */
+    display: grid;
+    grid-template-columns: repeat(4, 70px);
+    grid-template-rows: repeat(6, 60px);
+    gap: 1px;
+
+    /* BLOCK STYLING */
+    background-color: black;
+    border: 1px solid black;
+    border-radius: 5px;
+    padding: 1px;
+}
+
 .inputField {
     /* FONT STYLING */
     text-align: center;
@@ -53,13 +50,7 @@ header {
 #firstNumber {
     /* POSITIONING */
     grid-column: 1 / 5;
-    grid-row: 2 / 3;
-}
-
-#secondNumber {
-    /* POSITIONING */
-    grid-column: 1 / 5;
-    grid-row: 3 / 4;
+    grid-row: 1 / 2;
 }
 
 button:hover {
@@ -70,42 +61,16 @@ button:hover {
     /* BLOCK STYLING */
     background-color: lightgrey;
     color: black;
-    height: 60px;
-    width: 60px;
     /* FONT STYLING */
     text-align: center;
     font-size: 20px;
     font-weight: bold;
 }
 
-#additionButton {
-    /* POSITIONING */
-    grid-column: 1 / 2;
-    grid-row: 4 / 5;
-}
-
-#subtractionButton {
-    /* POSITIONING */
-    grid-column: 2 / 3;
-    grid-row: 4 / 5;
-}
-
-#multiplicationButton {
-    /* POSITIONING */
-    grid-column: 3 / 4;
-    grid-row: 4 / 5;
-}
-
-#divisionButton {
-    /* POSITIONING */
-    grid-column: 4 / 5;
-    grid-row: 4 / 5;
-}
-
 #clearButton {
     /* POSITIONING */
     grid-column: 1 / 3;
-    grid-row: 5 / 6;
+    grid-row: 2 / 3;
 
     /* BLOCK STYLING */
     background-color: orangered;
@@ -120,7 +85,7 @@ button:hover {
 #equalButton {
     /* POSITIONING */
     grid-column: 3 / 5;
-    grid-row: 5 / 6;
+    grid-row: 2 / 3;
 
     /* BLOCK STYLING */
     background-color: blue;
@@ -130,6 +95,96 @@ button:hover {
     text-align: center;
     font-size: 20px;
     font-weight: bold;
+}
+
+#additionButton {
+    /* POSITIONING */
+    grid-column: 4 / 5;
+    grid-row: 3 / 4;
+}
+
+#subtractionButton {
+    /* POSITIONING */
+    grid-column: 4 / 5;
+    grid-row: 4 / 5;
+}
+
+#multiplicationButton {
+    /* POSITIONING */
+    grid-column: 4 / 5;
+    grid-row: 5 / 6;
+}
+
+#sevenButton {
+    /* POSITIONING */
+    grid-column: 1 / 2;
+    grid-row: 3 / 4;
+}
+
+#eightButton {
+    /* POSITIONING */
+    grid-column: 2 / 3;
+    grid-row: 3 / 4;
+}
+
+#nineButton {
+    /* POSITIONING */
+    grid-column: 3 / 4;
+    grid-row: 3 / 4;
+}
+
+#fourButton {
+    /* POSITIONING */
+    grid-column: 1 / 2;
+    grid-row: 4 / 5;
+}
+
+#fiveButton {
+    /* POSITIONING */
+    grid-column: 2 / 3;
+    grid-row: 4 / 5;
+}
+
+#sixButton {
+    /* POSITIONING */
+    grid-column: 3 / 4;
+    grid-row: 4 / 5;
+}
+
+#oneButton {
+    /* POSITIONING */
+    grid-column: 1 / 2;
+    grid-row: 5 / 6;
+}
+
+#twoButton {
+    /* POSITIONING */
+    grid-column: 2 / 3;
+    grid-row: 5 / 6;
+}
+
+#threeButton {
+    /* POSITIONING */
+    grid-column: 3 / 4;
+    grid-row: 5 / 6;
+}
+
+#zeroButton {
+    /* POSITIONING */
+    grid-column: 1 / 3;
+    grid-row: 6 / 7;
+}
+
+#decimalButton {
+    /* POSITIONING */
+    grid-column: 3 / 4;
+    grid-row: 6 / 7;
+}
+
+#divisionButton {
+    /* POSITIONING */
+    grid-column: 4 / 5;
+    grid-row: 6 / 7;
 }
 
 #historyContainer {
