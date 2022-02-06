@@ -16,9 +16,15 @@ app.use(express.static('server/public'));
 
 // -------------------------------------------------------------------//
 
-// initialize calculationHistory an
+// initialize calculationHistory array
 let calculationHistory = [];
 
+// server sending calculationHistory to client on /calculationHistory url
+app.get('/calculationHistory', (req, res) => {
+    console.log('Request at /calculationHistory was made');
+    
+    res.send(calculationHistory);
+}); // end get /calculationHistory
 
 // server receiving request from client on /calculation url
 app.post("/calculation", (req, res) => {
@@ -44,7 +50,7 @@ app.post("/calculation", (req, res) => {
     calculationHistory.push(bundledCalculation);    
 
     // sends bundledCalculation (with solution) back to server
-    res.send(calculationHistory);
+    res.sendStatus(201);
 
 }); // end post /calculation
 

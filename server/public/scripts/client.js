@@ -6,10 +6,16 @@ let operation;
 
 function onReady() {
     console.log('JQ');
+
+    getCalculationHistory();
     
-    // initiate calculation on '=' click
+    // click listener for '=' button
     $('#equalButton').on('click', bundleCalculation);
 
+    // click listener for 'c' button
+    $('#clearButton').on('click', clearInputFields)
+
+    // click listeners for operation buttons
     $('#additionButton').on('click', operationAdd)
     $('#subtractionButton').on('click', operationSubtract)
     $('#multiplicationButton').on('click', operationMultiply)
@@ -32,6 +38,25 @@ let operationMultiply = () => {
 let operationDivide = () => {
     operation = '÷';
 } // end operationSubtract
+
+let getCalculationHistory = () => {
+    console.log('in getCalculationHistory');
+    
+    $.ajax({
+        method: 'GET',
+        url: '/calculationHistory',
+        data: ''
+    }).then(function(response){
+        console.log('Success!', response);
+        
+        // append calculationHistory to DOM
+        renderCalculationHistory(response);
+        
+    }).catch(function(response){
+        console.log('Failure');
+        
+    })
+} // end getCalculations
 
 let bundleCalculation = () => {
     console.log('in bundleCalculation');
@@ -57,12 +82,12 @@ if (operation === undefined) {
             },
         },
     }).then(function(response){
-        console.log('Success!', response);
+        // console.log('Success!', response);
 
-        renderCalculationHistory(response);
+        getCalculationHistory();
         
     }).catch(function(response){
-        console.log('Failure!');
+        // console.log('Failure!');
         
     })
     
@@ -81,3 +106,11 @@ let renderCalculationHistory = (response) => {
         `)
     }
 } // end renderCalculationHistory
+
+let clearInputFields = () => {
+    console.log('in clearInputFields');
+
+    // clear input fields when 'c' button is clicked
+    $('.inputField').val('');
+
+} // end clearInputFields
