@@ -98,6 +98,9 @@ if ($('.inputField').val() === '') {
 
                 // call to grab latest calculation history
                 getCalculationHistory();
+
+                // call to grab latest calculation solution
+                getLastSolution();
                 
             }).catch(function(response){
                 console.log('Failure!');
@@ -105,6 +108,37 @@ if ($('.inputField').val() === '') {
         
     }
 } // end bundleCalculation
+
+let getLastSolution = () => {
+    console.log('in getLastSolution');
+    
+    $.ajax({
+        method: 'GET', // request to server for calculator history
+        url: '/solution', 
+        data: ''
+    }).then(function(response){
+        console.log('Success!', response);
+        
+        renderSolution(response);
+
+    }).catch(function(response){
+        console.log('Failure');
+        
+    })
+} // end getLastSolution
+
+let renderSolution = (response) => {
+    console.log('in renderSolution', response);
+    
+    let responseConvertedToNumber = Number(response);
+    
+    // empties previous calculation solution
+    $('#calculatorSolution').empty();
+
+    // render last solution to DOM
+   $('#calculatorSolution').append(`<li class="solutionLi">${responseConvertedToNumber}</li>`)
+} // end renderSolution
+
 
 // Purpose of function: append latest calculation history to DOM
 let renderCalculationHistory = (response) => {

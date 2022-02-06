@@ -7,15 +7,46 @@ body {
     justify-content: center;
     align-items: flex-start;
     flex-direction: row;
-    gap: 50px;
+    gap: 25px;
     padding: 100px;
+}
+
+#calculatorContainer {
+    /* POSITIONING */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: 25px;
+}
+
+#calculatorSolution {
+    /* POSITIONING */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column-reverse;
+    /* BLOCK STYLING */
+    padding: 5px;
+    margin: 5px;
+    width: 270px;
+    /* FONT STYLING */
+    list-style-type: none;
+    line-height: 1.5em;
+    color: blue;
+    font-size: 30px;
+}
+
+#solutionLi {
+    /* FONT STYLING */
+    text-align: center;
 }
 
 #calculator {
     /* POSITIONING */
     display: grid;
     grid-template-columns: 1fr 1fr 1fr 1fr;
-    grid-template-rows: 45px 35px 35px 1fr 1fr;
+    grid-template-rows: 45px 35px 35px 1fr 1fr 10px;
     gap: 10px;
 
     /* BLOCK STYLING */
@@ -130,6 +161,17 @@ button:hover {
     text-align: center;
     font-size: 20px;
     font-weight: bold;
+}
+
+#solutionContainer {
+    /* POSITIONING */
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    flex-direction: column;
+    /* BLOCK STYLING */
+    border: 1px solid black;
+    width: 300px;
 }
 
 #historyContainer {

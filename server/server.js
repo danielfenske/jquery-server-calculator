@@ -54,6 +54,12 @@ app.post("/calculation", (req, res) => {
 
 }); // end post /calculation
 
+app.get('/solution', (req, res) => {
+    console.log('last solution', calculationHistory[calculationHistory.length-1].solution);
+    
+    let solution = (calculationHistory[calculationHistory.length-1].solution).toString();
+    res.send(solution);
+}); // end get /solution
 
 // calculate problem given from client
 let solveCalculation = (bundledCalculation) =>{

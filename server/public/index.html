@@ -13,27 +13,37 @@
         <script src="scripts/client.js"></script>
     </head>
     <body>
-        <section id="calculator">
-            <header>
-                <h1>Server Calculator</h1>
-            </header>
+        <section id="calculatorContainer">
 
-            <input type="number" class="inputField" id="firstNumber" placeholder="enter first number"></input>
-            <input type="number" class="inputField" id="secondNumber" placeholder="enter second number"></input>
+            <div id="calculator">
+                <header>
+                    <h1>Server Calculator</h1>
+                </header>
 
-            <button class="operationButton" id="additionButton">+</button>
-            <button class="operationButton" id="subtractionButton">–</button>
-            <button class="operationButton" id="multiplicationButton">×</button>
-            <button class="operationButton" id="divisionButton">÷</button>
-    
-            <button id="clearButton">C</button>      
-            <button id="equalButton">=</button>      
+                <input type="number" class="inputField" id="firstNumber" placeholder="enter first number"></input>
+                <input type="number" class="inputField" id="secondNumber" placeholder="enter second number"></input>
+
+                <button class="operationButton" id="additionButton">+</button>
+                <button class="operationButton" id="subtractionButton">–</button>
+                <button class="operationButton" id="multiplicationButton">×</button>
+                <button class="operationButton" id="divisionButton">÷</button>
+        
+                <button id="clearButton">C</button>      
+                <button id="equalButton">=</button> 
+            </div>
+
+            <div id="solutionContainer">
+                <h1 class= "subHeader">Solution</h1>
+                <ul id="calculatorSolution">
+                   
+                </ul>
+            </div>
         </section>
-
+           
         <section id="historyContainer">
             <h1 class= "subHeader">Calculator History</h1>
             <ul id="calculatorHistory">
-               
+                
             </ul>
         </section>
     </body>
