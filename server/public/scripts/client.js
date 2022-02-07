@@ -3,7 +3,9 @@ console.log('JS');
 $(document).ready(onReady);
 
 // // initialize operation variable
-// let operation;
+let operator = '';
+let numberOne;
+let numberTwo;
 
 function onReady() {
     console.log('JQ');
@@ -17,31 +19,38 @@ function onReady() {
     // click listener for 'c' button
     $('#clearButton').on('click', clearInputFields);
 
-    // click listeners for operation buttons
-    $('#additionButton').on('click', operationAdd);
-    $('#subtractionButton').on('click', operationSubtract);
-    $('#multiplicationButton').on('click', operationMultiply);
-    $('#divisionButton').on('click', operationDivide);
+    // click listener for operation buttons
+    $('.operationButton').on('click', handleOperator);
+
+    // click listener for number buttons
+    $('.numberButton').on('click', handleNumber)
 
 } // end onReady
 
-// operation will change value depending on operation button click
-let operationAdd = () => {
-    operation = '+';
+function handleOperator() {
+    console.log('in handleOperator', $(this).data().operator);
+    
+    operator = $(this).data().operator
+} // end handleOperator
 
-} // end operationAdd
+function handleNumber() {
+    console.log('in handleNumber', String($(this).data().number));
+    
+    
 
-let operationSubtract = () => {
-    operation = '–';
-} // end operationSubtract
+    // while (operator === '') {
+    //     numberOne += String($(this).data().number);
+    // }
 
-let operationMultiply = () => {
-    operation = '×';
-} // end operationSubtract
+    if (operator === '') {
+        while (numberTwo === null) {
+            numberOne += String($(this).data().number);
+        }
+    }
+    
+    
 
-let operationDivide = () => {
-    operation = '÷';
-} // end operationSubtract
+} // end handleNumber
 
 // Purpose of function: get latest calculation history array from server
 let getCalculationHistory = () => {
@@ -67,10 +76,6 @@ let getCalculationHistory = () => {
 // send as bundled object to server for calculation
 let bundleCalculation = () => {
     console.log('in bundleCalculation');
-
-        // define values taken from input fields
-        let firstNumber = Number($('#firstNumber').val());
-        let secondNumber = Number($('#secondNumber').val());
 
 if ($('.inputField').val() === '') {
     // will run if either input field is empty - inserted to avoid null in calculations
