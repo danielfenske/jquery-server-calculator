@@ -4,8 +4,8 @@ $(document).ready(onReady);
 
 // // initialize operation variable
 let operator = '';
-let numberOne;
-let numberTwo;
+let numberOne = '';
+let numberTwo = '';
 
 function onReady() {
     console.log('JQ');
@@ -36,20 +36,18 @@ function handleOperator() {
 function handleNumber() {
     console.log('in handleNumber', String($(this).data().number));
     
-    
-
-    // while (operator === '') {
-    //     numberOne += String($(this).data().number);
-    // }
+    let buttonPushed = String($(this).data().number);
 
     if (operator === '') {
-        while (numberTwo === null) {
-            numberOne += String($(this).data().number);
-        }
+        numberOne += buttonPushed;
+    } else {
+        numberTwo += buttonPushed;
     }
     
-    
+    console.log('numberOne', numberOne);
+    console.log('numberTwo', numberTwo);
 
+    
 } // end handleNumber
 
 // Purpose of function: get latest calculation history array from server
