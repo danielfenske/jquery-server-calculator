@@ -1,5 +1,7 @@
 * {
     font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    padding: 0px;
+    margin: 0px;
 }
 
 html { 
@@ -13,25 +15,54 @@ html {
 body {
     display: flex;
     justify-content: center;
-    align-items: flex-start;
-    flex-direction: row;
+    align-items: center;
+    flex-direction: column;
     gap: 50px;
-    padding: 100px;
 }
 
 header {
-    /* INNER ELEMENT POSITIONING */
+    /* POSITIONING */
     display: flex;
-    justify-content: center;
-    align-items: center;
+    flex-direction: row;
+    justify-content: space-between;
 
     /* BLOCK STYLING */
-   background-color: black;
-   color: white;
-   /* FONT STYLING */
-   text-align: center;
-   font-size: 20px;
-   font-weight: bold;
+    background-color: rgb(102, 122, 190, .85);
+    color: white;
+    width: 100vw;
+    padding: 5px;
+}
+
+#navigationBar {
+    /* POSITIONING */
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    flex-direction: row;
+    gap: 15px;
+
+    /* BLOCK STYLING */
+    padding-left: 20px;
+}
+
+#taskBar {
+     /* POSITIONING */
+     display: flex;
+     justify-content: flex-end;
+     align-items: center;
+     flex-direction: row;
+     gap: 15px;
+ 
+     /* BLOCK STYLING */
+     padding-right: 20px;
+}
+
+.headers {
+    /* FONT STYLING */
+    font-size: 8px;
+    font-weight: 100;
+
+    opacity: 1;
 }
 
 #calculator {
