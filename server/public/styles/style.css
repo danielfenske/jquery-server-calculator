@@ -1,14 +1,79 @@
 * {
-    font-family: Arial, Helvetica, sans-serif;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    padding: 0px;
+    margin: 0px;
 }
+
+html { 
+    background: url(macos-big-sur-apple-layers-fluidic-colorful-wwdc-stock-4096x2304-1455.jpg) no-repeat center center fixed; 
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+  }
 
 body {
     display: flex;
     justify-content: center;
-    align-items: flex-start;
+    align-items: center;
+    flex-direction: column;
+    gap: 50px;
+}
+
+header {
+    /* POSITIONING */
+    display: flex;
     flex-direction: row;
-    gap: 25px;
-    padding: 100px;
+    justify-content: space-between;
+    flex-wrap: wrap;
+
+    /* BLOCK STYLING */
+    background-color: rgb(102, 122, 190, .85);
+    color: white;
+    width: 100vw;
+    padding: 5px;
+}
+
+#navigationBar {
+    /* POSITIONING */
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 20px;
+
+    /* BLOCK STYLING */
+    padding-left: 20px;
+}
+
+#taskBar {
+     /* POSITIONING */
+     display: flex;
+     justify-content: flex-end;
+     align-items: center;
+     flex-direction: row;
+     flex-wrap: wrap;
+     gap: 20px;
+ 
+     /* BLOCK STYLING */
+     padding-right: 20px;
+}
+
+.headers {
+    /* FONT STYLING */
+    font-size: 14px;
+    font-weight: 100;
+}
+
+main {
+    /* POSITIONING */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 150px;
 }
 
 #calculatorContainer {
@@ -46,127 +111,195 @@ body {
 #calculator {
     /* POSITIONING */
     display: grid;
-    grid-template-columns: 1fr 1fr 1fr 1fr;
-    grid-template-rows: 45px 35px 35px 1fr 1fr 10px;
-    gap: 10px;
+    grid-template-columns: repeat(4, 65px);
+    grid-template-rows: 80px repeat(5, 60px);
+    gap: 1px;
 
     /* BLOCK STYLING */
-    background-color: black;
+    background-color: #492222;
     border-radius: 10px;
-    padding: 10px;
-    width: 270px;
-}
-
-header {
-    grid-column: 1 / 5;
-    grid-row: 1 / 2;
-
-    /* INNER ELEMENT POSITIONING */
-    display: flex;
-    justify-content: center;
-    align-items: center;
-
-    /* BLOCK STYLING */
-   background-color: black;
-   color: white;
-   /* FONT STYLING */
-   text-align: center;
-   font-size: 20px;
-   font-weight: bold;
+    opacity: .85;
+    padding: 1px;
 }
 
 .inputField {
+    /* POSITIONING */
+    grid-column: 1 / 5;
+    grid-row: 1 / 2;
+
+    /* BLOCK STYLING */
+    background-color: #492222 ;
+    color: white;
+    border-radius: 10px 10px 0px 0px;
+
     /* FONT STYLING */
-    text-align: center;
-    font-size: 20px;
-    font-weight: normal;
+    text-align: right;
+    padding: 20px;
+    font-size: 50px;
+    font-weight: lighter;
 }
 
-#firstNumber {
-    /* POSITIONING */
-    grid-column: 1 / 5;
-    grid-row: 2 / 3;
-}
-
-#secondNumber {
-    /* POSITIONING */
-    grid-column: 1 / 5;
-    grid-row: 3 / 4;
-}
-
-button:hover {
-    filter: brightness(150%)
+button, input {
+    border: none;
 }
 
 .operationButton {
     /* BLOCK STYLING */
-    background-color: lightgrey;
-    color: black;
-    height: 60px;
-    width: 60px;
+    background-color: #ff9c0c;
+    color: white;
     /* FONT STYLING */
     text-align: center;
     font-size: 30px;
-    font-weight: bold;
+}
+
+.operationButton:active {
+    background: #ce7f09;
 }
 
 .operationButton:focus {
-    background-color: rgb(63, 63, 63);
-    color: white;
-}
-
-#additionButton {
-    /* POSITIONING */
-    grid-column: 1 / 2;
-    grid-row: 4 / 5;
-}
-
-#subtractionButton {
-    /* POSITIONING */
-    grid-column: 2 / 3;
-    grid-row: 4 / 5;
-}
-
-#multiplicationButton {
-    /* POSITIONING */
-    grid-column: 3 / 4;
-    grid-row: 4 / 5;
-}
-
-#divisionButton {
-    /* POSITIONING */
-    grid-column: 4 / 5;
-    grid-row: 4 / 5;
+    border: 1px solid #492222;
 }
 
 #clearButton {
     /* POSITIONING */
     grid-column: 1 / 3;
-    grid-row: 5 / 6;
+    grid-row: 2 / 3;
 
     /* BLOCK STYLING */
-    background-color: orangered;
+    background-color: #7a4242;
     color: white;
 
     /* FONT STYLING */
     text-align: center;
-    font-size: 20px;
-    font-weight: bold;
+    font-size: 30px;
 }
 
 #equalButton {
     /* POSITIONING */
     grid-column: 3 / 5;
-    grid-row: 5 / 6;
+    grid-row: 2 / 3;
 
     /* BLOCK STYLING */
-    background-color: blue;
+    background-color: #7a4242;
     color: white;
 
     /* FONT STYLING */
     text-align: center;
-    font-size: 20px;
-    font-weight: bold;
+    font-size: 30px;
+}
+
+#clearButton:active, #equalButton:active  {
+    background-color: #885c6c;
+}
+
+#additionButton {
+    /* POSITIONING */
+    grid-column: 4 / 5;
+    grid-row: 3 / 4;
+}
+
+#subtractionButton {
+    /* POSITIONING */
+    grid-column: 4 / 5;
+    grid-row: 4 / 5;
+}
+
+#multiplicationButton {
+    /* POSITIONING */
+    grid-column: 4 / 5;
+    grid-row: 5 / 6;
+}
+
+.numberButton {
+    /* BLOCK STYLING */
+    background-color: #885c6c;
+    color: white;
+    /* FONT STYLING */
+    text-align: center;
+    font-size: 30px;
+}
+
+.numberButton:active {
+    background-color: #ad8b97;
+}
+
+#sevenButton {
+    /* POSITIONING */
+    grid-column: 1 / 2;
+    grid-row: 3 / 4;
+}
+
+#eightButton {
+    /* POSITIONING */
+    grid-column: 2 / 3;
+    grid-row: 3 / 4;
+}
+
+#nineButton {
+    /* POSITIONING */
+    grid-column: 3 / 4;
+    grid-row: 3 / 4;
+}
+
+#fourButton {
+    /* POSITIONING */
+    grid-column: 1 / 2;
+    grid-row: 4 / 5;
+}
+
+#fiveButton {
+    /* POSITIONING */
+    grid-column: 2 / 3;
+    grid-row: 4 / 5;
+}
+
+#sixButton {
+    /* POSITIONING */
+    grid-column: 3 / 4;
+    grid-row: 4 / 5;
+}
+
+#oneButton {
+    /* POSITIONING */
+    grid-column: 1 / 2;
+    grid-row: 5 / 6;
+}
+
+#twoButton {
+    /* POSITIONING */
+    grid-column: 2 / 3;
+    grid-row: 5 / 6;
+}
+
+#threeButton {
+    /* POSITIONING */
+    grid-column: 3 / 4;
+    grid-row: 5 / 6;
+}
+
+#zeroButton {
+    /* POSITIONING */
+    grid-column: 1 / 3;
+    grid-row: 6 / 7;
+
+    /* BLOCK STYLING */
+    border-radius: 0px 0px 0px 10px;
+
+}
+
+#decimalButton {
+    /* POSITIONING */
+    grid-column: 3 / 4;
+    grid-row: 6 / 7;
+}
+
+#divisionButton {
+    /* POSITIONING */
+    grid-column: 4 / 5;
+    grid-row: 6 / 7;
+
+    /* BLOCK STYLING */
+    border-radius: 0px 0px 10px 0px;
 }
 
 #solutionContainer {
@@ -181,35 +314,67 @@ button:hover {
 }
 
 #historyContainer {
-    /* POSITIONING */
-    display: flex;
-    justify-content: flex-start;
-    align-items: center;
-    flex-direction: column;
-    /* BLOCK STYLING */
-    border: 1px solid black;
-    width: 300px;
+   /* POSITIONING */
+   display: grid;
+   grid-template-columns: 1fr;
+   grid-template-rows: 60px 15px 1fr;
+
+   /* BLOCK STYLING */
+   background-color: #FFFFFF;
+   border-radius: 25px;
+   width: 375px;
+   min-height: 525px;
 }
 
-.subHeader {
-    padding: 5px;
-    margin: 5px;
+#historyHeader {
+    grid-column: 1 / 2;
+    grid-row: 1 / 2;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    /* BLOCK STYLING */
+    background-color: #FCD43B;
+    border-radius: 25px 25px 0px 0px;
+    box-shadow: 0px 2px 5px grey;
+}
+
+#divider {
+    /* POSITIONING */
+    grid-column: 1 / 2;
+    grid-row: 2 / 3;
+
+    height: 1px;
+    border: 0;
+    border-top: 3px dotted #ccc;
+    margin: .75em 0;
+    padding: 0;
+}
+
+.notesLine {
+    height: 1px;
+    border: 0;
+    border-top: 1px solid grey;
+    margin: .75em 0;
+    padding: 0;
 }
 
 #calculatorHistory {
     /* POSITIONING */
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column-reverse;
+    grid-column: 1 / 2;
+    grid-row: 3 / 4;
     /* BLOCK STYLING */
     padding: 5px;
     margin: 5px;
-    width: 270px;
     /* FONT STYLING */
     list-style-type: none;
     line-height: 1.5em;
-    font-weight: normal;
+    text-align: center;
+}
+
+li {
+    font-size: 1.5em;
 }
 
 li.calculationLi:last-child {
@@ -217,11 +382,7 @@ li.calculationLi:last-child {
     font-weight: bold;
 }
 
-#calculationLi {
-    /* FONT STYLING */
-    text-align: center;
-}
-
-.blue {
-    color: blue;
+footer p {
+    padding: 20px;
+    color: white;
 }

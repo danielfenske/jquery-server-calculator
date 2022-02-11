@@ -13,38 +13,66 @@
         <script src="scripts/client.js"></script>
     </head>
     <body>
-        <section id="calculatorContainer">
 
-            <div id="calculator">
-                <header>
-                    <h1>Server Calculator</h1>
-                </header>
-
-                <input type="number" class="inputField" id="firstNumber" placeholder="enter first number"></input>
-                <input type="number" class="inputField" id="secondNumber" placeholder="enter second number"></input>
-
-                <button class="operationButton" id="additionButton">+</button>
-                <button class="operationButton" id="subtractionButton">–</button>
-                <button class="operationButton" id="multiplicationButton">×</button>
-                <button class="operationButton" id="divisionButton">÷</button>
-        
-                <button id="clearButton">C</button>      
-                <button id="equalButton">=</button> 
+        <header>
+            <div id="navigationBar">
+                <div class="headers"><p></p></div>
+                <div class="headers"><p>Calculator</p></div>
+                <div class="headers"><p>File</p></div>
+                <div class="headers"><p>Edit</p></div>
+                <div class="headers"><p>View</p></div>
+                <div class="headers"><p>Go</p></div>
+                <div class="headers"><p>Window</p></div>
+                <div class="headers"><p>Help</p></div>
             </div>
+            
+            <div id="taskBar">
+                <div class="headers"><p>Thu Feb 10</p></div>
+                <div class="headers"><p>8:40 PM</p></div>
+            </div>
+        </header>
 
-            <div id="solutionContainer">
-                <h1 class= "subHeader">Solution</h1>
-                <ul id="calculatorSolution">
+        <main>
+            <section id="calculator">
+
+                <input type="text" class="inputField" disabled></input>
+    
+                <button id="clearButton">C</button>      
+                <button id="equalButton">=</button>
+    
+                <button class="operationButton" id="additionButton" data-operation="+">+</button>
+                <button class="operationButton" id="subtractionButton" data-operation="–">–</button>
+                <button class="operationButton" id="multiplicationButton" data-operation="×">×</button>
+                <button class="operationButton" id="divisionButton" data-operation="÷">÷</button>
+    
+                <button class="numberButton" id="sevenButton" data-number="7">7</button>        
+                <button class="numberButton" id="eightButton" data-number="8">8</button>
+                <button class="numberButton" id="nineButton" data-number="9">9</button>
+                <button class="numberButton" id="fourButton" data-number="4">4</button>
+                <button class="numberButton" id="fiveButton" data-number="5">5</button>
+                <button class="numberButton" id="sixButton" data-number="6">6</button>
+                <button class="numberButton" id="oneButton" data-number="1">1</button>
+                <button class="numberButton" id="twoButton" data-number="2">2</button>
+                <button class="numberButton" id="threeButton" data-number="3">3</button>
+                <button class="numberButton" id="zeroButton" data-number="0">0</button>
+                <button class="numberButton" id="decimalButton" data-number=".">.</button>
+          
+            </section>
+    
+            <section id="historyContainer">
+                <div id="historyHeader">
+                    <!-- <h1 class= "subHeader">History</h1> -->
+                </div>
+                <hr id="divider"/>
+                <ul id="calculatorHistory">
                    
                 </ul>
-            </div>
-        </section>
-           
-        <section id="historyContainer">
-            <h1 class= "subHeader">Calculator History</h1>
-            <ul id="calculatorHistory">
-                
-            </ul>
-        </section>
+            </section>
+        </main>
+
+        <footer>
+            <p>Designed by Daniel Fenske</p>
+        </footer>
+
     </body>
 </html>
