@@ -129,26 +129,6 @@ if (firstNumber === '') {
         }
 } // end bundleCalculation
 
-// Purpose of function: get latest calculation history array from server
-let getCalculationHistory = () => {
-    console.log('in getCalculationHistory');
-    
-    $.ajax({
-        method: 'GET', // request to server for calculator history
-        url: '/calculationHistory', 
-        data: ''
-    }).then(function(response){
-        console.log('Success!', response);
-        
-        // append calculationHistory to DOM
-        renderCalculationHistory(response);
-        
-    }).catch(function(response){
-        console.log('Failure');
-        
-    })
-} // end getCalculations
-
 // Purpose of function: append latest calculation history to DOM
 function renderCalculationHistory (response){
     console.log('in renderCalculationHistory');
@@ -163,36 +143,6 @@ function renderCalculationHistory (response){
         `)
     }
 } // end renderCalculationHistory
-
-let getLastSolution = () => {
-    console.log('in getLastSolution');
-    
-    $.ajax({
-        method: 'GET', // request to server for calculator history
-        url: '/solution', 
-        data: ''
-    }).then(function(response){
-        console.log('Success!', response);
-        
-        renderSolution(response);
-
-    }).catch(function(response){
-        console.log('Failure');
-        
-    })
-} // end getLastSolution
-
-let renderSolution = (response) => {
-    console.log('in renderSolution', response);
-    
-    let responseConvertedToNumber = Number(response);
-    
-    // empties previous calculation solution
-    $('#calculatorSolution').empty();
-
-    // render last solution to DOM
-   $('#calculatorSolution').append(`<li class="solutionLi">${responseConvertedToNumber}</li>`)
-} // end renderSolution
 
 // Purpose of function: clear input fields when 'C' button is pressed
 function clearInputField () {
