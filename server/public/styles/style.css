@@ -76,38 +76,6 @@ main {
     gap: 150px;
 }
 
-#calculatorContainer {
-    /* POSITIONING */
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
-    gap: 25px;
-}
-
-#calculatorSolution {
-    /* POSITIONING */
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column-reverse;
-    /* BLOCK STYLING */
-    padding: 5px;
-    margin: 5px;
-    width: 270px;
-    /* FONT STYLING */
-    list-style-type: none;
-    color: blue;
-    font-size: 30px;
-    font-weight: bold;
-}
-
-#solutionLi {
-    /* FONT STYLING */
-    text-align: center;
-    font-size: 40px;
-}
-
 #calculator {
     /* POSITIONING */
     display: grid;
@@ -302,17 +270,6 @@ button, input {
     border-radius: 0px 0px 10px 0px;
 }
 
-#solutionContainer {
-    /* POSITIONING */
-    display: flex;
-    justify-content: flex-start;
-    align-items: center;
-    flex-direction: column;
-    /* BLOCK STYLING */
-    border: 1px solid black;
-    width: 300px;
-}
-
 #historyContainer {
    /* POSITIONING */
    display: grid;
@@ -377,8 +334,7 @@ li {
     font-size: 1.5em;
 }
 
-li.calculationLi:last-child {
-    font-size: 18px;
+ul :last-child {
     font-weight: bold;
 }
 
