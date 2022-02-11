@@ -25,6 +25,7 @@ header {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
+    flex-wrap: wrap;
 
     /* BLOCK STYLING */
     background-color: rgb(102, 122, 190, .85);
@@ -39,6 +40,7 @@ header {
     justify-content: flex-start;
     align-items: center;
     flex-direction: row;
+    flex-wrap: wrap;
     gap: 20px;
 
     /* BLOCK STYLING */
@@ -51,6 +53,7 @@ header {
      justify-content: flex-end;
      align-items: center;
      flex-direction: row;
+     flex-wrap: wrap;
      gap: 20px;
  
      /* BLOCK STYLING */
@@ -69,6 +72,7 @@ main {
     justify-content: center;
     align-items: center;
     flex-direction: row;
+    flex-wrap: wrap;
     gap: 100px;
 }
 
@@ -97,7 +101,8 @@ main {
     border-radius: 10px 10px 0px 0px;
 
     /* FONT STYLING */
-    text-align: center;
+    text-align: right;
+    padding: 20px;
     font-size: 50px;
     font-weight: lighter;
 }
