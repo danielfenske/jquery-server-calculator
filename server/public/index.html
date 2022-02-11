@@ -32,37 +32,43 @@
             </div>
         </header>
 
-        <section id="calculator">
+        <main>
+            <section id="calculator">
 
-            <input type="text" class="inputField"></input>
+                <input type="text" class="inputField"></input>
+    
+                <button id="clearButton">C</button>      
+                <button id="equalButton">=</button>
+    
+                <button class="operationButton" id="additionButton" data-operator="+">+</button>
+                <button class="operationButton" id="subtractionButton" data-operator="–">–</button>
+                <button class="operationButton" id="multiplicationButton" data-operator="×">×</button>
+                <button class="operationButton" id="divisionButton" data-operator="÷">÷</button>
+    
+                <button class="numberButton" id="sevenButton" data-number="7">7</button>        
+                <button class="numberButton" id="eightButton" data-number="8">8</button>
+                <button class="numberButton" id="nineButton" data-number="9">9</button>
+                <button class="numberButton" id="fourButton" data-number="4">4</button>
+                <button class="numberButton" id="fiveButton" data-number="5">5</button>
+                <button class="numberButton" id="sixButton" data-number="6">6</button>
+                <button class="numberButton" id="oneButton" data-number="1">1</button>
+                <button class="numberButton" id="twoButton" data-number="2">2</button>
+                <button class="numberButton" id="threeButton" data-number="3">3</button>
+                <button class="numberButton" id="zeroButton" data-number="0">0</button>
+                <button class="numberButton" id="decimalButton" data-number=".">.</button>
+          
+            </section>
+    
+            <section id="historyContainer">
+                <div id="historyHeader">
+                    <h1 class= "subHeader">History</h1>
+                </div>
+                <hr/>
+                <ul id="calculatorHistory">
+                   
+                </ul>
+            </section>
+        </main>
 
-            <button id="clearButton">C</button>      
-            <button id="equalButton">=</button>
-
-            <button class="operationButton" id="additionButton" data-operator="+">+</button>
-            <button class="operationButton" id="subtractionButton" data-operator="–">–</button>
-            <button class="operationButton" id="multiplicationButton" data-operator="×">×</button>
-            <button class="operationButton" id="divisionButton" data-operator="÷">÷</button>
-
-            <button class="numberButton" id="sevenButton" data-number="7">7</button>        
-            <button class="numberButton" id="eightButton" data-number="8">8</button>
-            <button class="numberButton" id="nineButton" data-number="9">9</button>
-            <button class="numberButton" id="fourButton" data-number="4">4</button>
-            <button class="numberButton" id="fiveButton" data-number="5">5</button>
-            <button class="numberButton" id="sixButton" data-number="6">6</button>
-            <button class="numberButton" id="oneButton" data-number="1">1</button>
-            <button class="numberButton" id="twoButton" data-number="2">2</button>
-            <button class="numberButton" id="threeButton" data-number="3">3</button>
-            <button class="numberButton" id="zeroButton" data-number="0">0</button>
-            <button class="numberButton" id="decimalButton" data-number=".">.</button>
-      
-        </section>
-
-        <section id="historyContainer">
-            <h1 class= "subHeader">Calculator History</h1>
-            <ul id="calculatorHistory">
-               
-            </ul>
-        </section>
     </body>
 </html>

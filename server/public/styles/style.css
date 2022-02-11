@@ -12,13 +12,13 @@ html {
     background-size: cover;
   }
 
-body {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
-    gap: 50px;
-}
+  body {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+      gap: 50px;
+  }
 
 header {
     /* POSITIONING */
@@ -39,7 +39,7 @@ header {
     justify-content: flex-start;
     align-items: center;
     flex-direction: row;
-    gap: 15px;
+    gap: 20px;
 
     /* BLOCK STYLING */
     padding-left: 20px;
@@ -51,7 +51,7 @@ header {
      justify-content: flex-end;
      align-items: center;
      flex-direction: row;
-     gap: 15px;
+     gap: 20px;
  
      /* BLOCK STYLING */
      padding-right: 20px;
@@ -61,14 +61,21 @@ header {
     /* FONT STYLING */
     font-size: 8px;
     font-weight: 100;
+}
 
-    opacity: 1;
+main {
+    /* POSITIONING */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
+    gap: 100px;
 }
 
 #calculator {
     /* POSITIONING */
     display: grid;
-    grid-template-columns: repeat(4, 70px);
+    grid-template-columns: repeat(4, 75px);
     grid-template-rows: 80px repeat(5, 60px);
     gap: 1px;
 
@@ -259,20 +266,38 @@ button, input {
 }
 
 #historyContainer {
-    /* POSITIONING */
-    display: flex;
-    justify-content: flex-start;
-    align-items: center;
-    flex-direction: column;
-    /* BLOCK STYLING */
-    border: 1px solid black;
-    min-width: 300px;
-    max-width: 100%;
+   /* POSITIONING */
+   display: grid;
+   grid-template-columns: 1fr;
+   grid-template-rows: 60px 1fr;
+
+   /* BLOCK STYLING */
+   background-color: #FFFFFF;
+   border-radius: 25px;
+   width: 400px;
+   min-height: 600px;
 }
 
-.subHeader {
-    padding: 5px;
-    margin: 5px;
+#historyHeader {
+    grid-column: 1 / 2;
+    grid-row: 1 / 2;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    /* BLOCK STYLING */
+    background-color: #FCD43B;
+    border-radius: 25px 25px 0px 0px;
+    box-shadow: 0px 2px 5px grey;
+}
+
+hr {
+    height: 1px;
+    border: 0;
+    border-top: 3px dotted #ccc;
+    margin: .75em 0;
+    padding: 0;
 }
 
 #calculatorHistory {
