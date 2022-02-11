@@ -136,7 +136,7 @@ function renderCalculationHistory (response){
     // loops through calculation history array and appends each object to display calc + solution
     for (let calculation of response) {
         $('#calculatorHistory').append(`
-            <li class="calculationLi">${calculation.firstNumber} ${calculation.operation} ${calculation.secondNumber} = ${calculation.solution}<hr></li>
+            <li class="calculationLi">${calculation.firstNumber} ${calculation.operation} ${calculation.secondNumber} = ${calculation.solution}<hr class="notesLine"/></li>
         `)
     }
 } // end renderCalculationHistory
