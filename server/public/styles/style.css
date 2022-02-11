@@ -17,7 +17,7 @@ body {
     justify-content: center;
     align-items: center;
     flex-direction: column;
-    gap: 75px;
+    gap: 50px;
 }
 
 header {
@@ -279,8 +279,8 @@ button, input {
    /* BLOCK STYLING */
    background-color: #FFFFFF;
    border-radius: 25px;
-   width: 400px;
-   min-height: 600px;
+   width: 375px;
+   min-height: 525px;
 }
 
 #historyHeader {
@@ -339,6 +339,6 @@ ul :last-child {
 }
 
 footer p {
-    padding: 40px;
+    padding: 20px;
     color: white;
 }
