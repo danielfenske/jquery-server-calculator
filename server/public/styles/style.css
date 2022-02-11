@@ -12,13 +12,13 @@ html {
     background-size: cover;
   }
 
-  body {
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      flex-direction: column;
-      gap: 50px;
-  }
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: 75px;
+}
 
 header {
     /* POSITIONING */
@@ -62,7 +62,7 @@ header {
 
 .headers {
     /* FONT STYLING */
-    font-size: 8px;
+    font-size: 14px;
     font-weight: 100;
 }
 
@@ -73,20 +73,20 @@ main {
     align-items: center;
     flex-direction: row;
     flex-wrap: wrap;
-    gap: 100px;
+    gap: 150px;
 }
 
 #calculator {
     /* POSITIONING */
     display: grid;
-    grid-template-columns: repeat(4, 75px);
+    grid-template-columns: repeat(4, 65px);
     grid-template-rows: 80px repeat(5, 60px);
     gap: 1px;
 
     /* BLOCK STYLING */
     background-color: #492222;
     border-radius: 10px;
-    opacity: .95;
+    opacity: .85;
     padding: 1px;
 }
 
@@ -330,6 +330,15 @@ button, input {
     text-align: center;
 }
 
+li {
+    font-size: 1.5em;
+}
+
 ul :last-child {
     font-weight: bold;
+}
+
+footer p {
+    padding: 40px;
+    color: white;
 }

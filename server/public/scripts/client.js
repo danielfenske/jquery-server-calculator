@@ -77,6 +77,9 @@ let getCalculationHistory = () => {
         
         // append calculationHistory to DOM
         renderCalculationHistory(response);
+
+        // reset equation variables
+        resetEquationVariables();
         
     }).catch(function(response){
         console.log('Failure');
@@ -90,7 +93,7 @@ function bundleCalculation(){
     console.log('in bundleCalculation');
 if (firstNumber === '') {
     // will run if no operation is clicked - inserted to avoid null in calculation
-    alert('Please enter first number to receive calculation');
+    alert('Please enter first number to start calculation');
   }  else if (operation === '') {
         // will run if no operation is clicked - inserted to avoid null in calculation
         alert('Please select operation to receive calculation');
@@ -118,7 +121,7 @@ if (firstNumber === '') {
 
                     // call to grab latest calculation history
                     getCalculationHistory();
-                    
+
                 }).catch(function(response){
                     console.log('Failure!');
                 })
@@ -162,3 +165,11 @@ function resetEquationVariables () {
     secondNumber = '';
 
 } // end resetEquationVariables
+
+function renderSolution (response) {
+    console.log('in renderSolution');
+    
+    let answer = response[response.length-1].solution;
+
+    $('.inputField').val(answer);
+} // end renderSolution
