@@ -27,7 +27,7 @@ I solved this problem by breaking the large task into smaller, more digestible a
 
 ## Wireframe
 
-![Wireframe](/images/server-calculator-wireframe.png)
+![Wireframe](/images/calculator-wireframe.png)
 
 ### Built using:
 - JavaScript (client and server)

@@ -20,7 +20,7 @@ function onReady() {
     $('#clearButton').on('click', resetEquationVariables);
 
     // click listener for operation buttons
-    $('.operationButton').on('click', handleoperation);
+    $('.operationButton').on('click', handleOperation);
 
     // click listener for number buttons
     $('.numberButton').on('click', handleNumber);
@@ -39,11 +39,11 @@ function renderNumber() {
     }
 } // end renderNumber
 
-function handleoperation() {
-    console.log('in handleoperation', $(this).data().operation);
+function handleOperation() {
+    console.log('in handleOperation', $(this).data().operation);
     
     operation = $(this).data().operation
-} // end handleoperation
+} // end handleOperation
 
 function handleNumber() {
     console.log('in handleNumber', String($(this).data().number));
